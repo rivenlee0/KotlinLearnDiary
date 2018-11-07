@@ -1,0 +1,27 @@
+
+什么是Lambda表达式？
+- 匿名函数;
+- 写法:{[参数列表] -> [函数体， 最后一行是返回值]}
+  val sum = { a:Int, b:Int -> a + b }
+
+Lambda的类型表示距离
+- () -> Unit
+- 无参，返回值为Unit
+- (Int) -> Int
+- 传入整型，返回一个整型
+- (String,(String) -> String) -> Boolean
+- 传入字符串、Lambda表达式，返回Boolean
+
+Lambda表达式的调用
+- ()进行调用
+- 等价于invoke()
+- 举例:
+  val sum = { a:Int, b:Int -> a + b }
+  sum = (2, 3)
+  sum.invoke(2, 3)
+
+Lambda表达式的简化
+- 函数参数调用时最后一个Lambda可以移出去
+- 函数参数只有一个Lambda，调用时小括号可省略
+- Lambda只有一个参数可默认为it
+- 入参、返回值与形参一致的函数可以用函数引用的方式作为实参传入

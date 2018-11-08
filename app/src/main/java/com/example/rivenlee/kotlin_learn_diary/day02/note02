@@ -1,0 +1,38 @@
+
+什么是类成员？
+- 属性：或者说成员变量，类范围内的变量
+- 方法：或者说成员函数，类范围内的函数
+
+函数和方法的区别？
+- 函数强调功能本身，不考虑从属
+- 方法的称呼通常是从类的角度出发
+- 叫法不同而已
+
+定义方法
+- 写法与普通函数完全一致
+- 举例：
+  class Hello{
+    fun sayHello(name: String) = println("Hello,$name")
+  }
+
+定义属性
+- 构造方法参数中val/var修饰的都是属性
+- 类内部也可以定义属性
+- 举例：
+  class Hello(val aField:Int, notAField:Int){
+    var anotherField:Float = 3f
+  }
+
+属性访问控制
+- 属性可以定义getter/setter
+- 举例：
+  val a:Int = 0
+   get() = field
+  var b:Float = 0f
+   set(value){ field = value }
+
+属性初始化
+- 属性的初始化尽量在构造方法中完成
+- 无法在构造方法中初始化，尝试降级为局部变量
+- var用lateinit延迟初始化，val用lazy
+- 可空类型谨慎用null直接初始化

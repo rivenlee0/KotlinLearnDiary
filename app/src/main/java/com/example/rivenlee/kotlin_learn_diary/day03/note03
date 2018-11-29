@@ -1,0 +1,23 @@
+中缀表达式
+- 只有一个参数，且用infix修饰的函数
+- 举例
+  class Book{
+    infix fun on(place: String){
+
+    }
+  }
+  Book() on "MyDesk"
+
+分支表达式
+- if表达式
+- if ... else
+- if(a == b) ... else if(a == c) ... else ...
+
+- 表达式与完备性
+- val x = if(b < 0) 0 else b
+- val x = if(b < 0) 0 //错误，赋值时，分支必须完备
+
+- when表达式
+- 加强版switch，支持任意类型
+- 支持纯表达式条件分支（类似if）
+- 表达式与完备性

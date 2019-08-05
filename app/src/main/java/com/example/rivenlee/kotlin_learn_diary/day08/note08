@@ -1,0 +1,29 @@
+方法重载
+- Overloads
+- 名称相同、参数不同的方法
+- Jvm函数签名的概念：函数名、参数列表
+- 跟返回值没有关系
+
+默认参数
+- 为函数参数设定一个默认值
+- 可以为任意位置的参数设置默认值
+- 函数调用生产混淆时用具名参数
+
+方法重载与默认参数
+- 二者的相关性以及@JvmOverloads
+- 避免定义关系不大的重载
+- 不好的设计：
+      List.remove(int)
+      List.remove(Object)
+
+扩展成员
+- 为现有类添加方法、属性
+  fun X.y(): Z { ...}
+  val X:m 注意扩展属性不能初始化，类似接口属性
+- Java调用扩展成员类似调用静态方法
+
+属性代理
+- 定义方法
+  val/var <property name>: <Type> by <expression>
+- 代理者需要实现相应的setValue/getValue方法
+- lazy原理

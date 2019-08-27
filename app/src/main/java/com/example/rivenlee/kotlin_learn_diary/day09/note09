@@ -1,0 +1,4 @@
+数据类
+- 默认实现的copy、toString等方法
+- componentN方法
+- allOpen和noArg插件

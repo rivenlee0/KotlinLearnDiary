@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-noarg'
+apply plugin: 'kotlin-allopen'
 
 android {
     compileSdkVersion 28
@@ -24,6 +26,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+
+noArg {
+    annotation("com.example.rivenlee.kotlin_learn_diary.day09.PoKo")
+}
+
+allOpen {
+    annotation("com.example.rivenlee.kotlin_learn_diary.day09.PoKo")
 }
 
 dependencies {

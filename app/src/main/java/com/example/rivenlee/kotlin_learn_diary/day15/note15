@@ -2,3 +2,9 @@
 - m(x) = f(g(x))
 - 如何实现复合函数
 - 回顾：infix的使用
+
+Currying
+- 理解Currying的概念
+  简单说就是多元函数变换成一元函数调用链
+- 了解Currying的实现方法
+

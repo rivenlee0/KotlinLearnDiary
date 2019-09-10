@@ -20,6 +20,11 @@ fun main(args: Array<String>) {
         println(it.age)
         it.work()
     }
+    
+    findPerson()?.let { person ->
+        println(person.age)
+        person.work()
+    }
 
     findPerson()?.apply {
         println(age)

@@ -1,6 +1,12 @@
 package com.example.rivenlee.kotlin_learn_diary.day15;
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.SparseIntArray;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.EditText;
 
 import java.util.HashMap;
 

@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.SavedStateHandle
 import com.example.rivenlee.kotlin_learn_diary.R
+import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.components.ActivityComponent
+import javax.inject.Inject
 
 /**
  * FileName: TableActivity
@@ -29,10 +31,17 @@ interface AnalyticsService {
     fun analyticsMethods()
 }
 
+class AnalyticsServiceImpl @Inject constructor(): AnalyticsService{
+    override fun analyticsMethods() {
+
+    }
+}
+
 @Module
 @InstallIn(ActivityComponent::class)
 abstract class AnalyticsModule{
 
-    public abstract fun bindAnalyticsService(): AnalyticsService
+    @Binds
+    abstract fun bindAnalyticsService(analyticsServiceImpl: AnalyticsServiceImpl): AnalyticsService
 
 }

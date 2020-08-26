@@ -1,5 +1,10 @@
 package com.example.rivenlee.kotlin_learn_diary.project.activity
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -33,10 +38,27 @@ class TableActivity : AppCompatActivity() {
                 }
             }
         }
+
     }
 
     public fun observerClick(v: View){
         tv?.text = "observerClick"
+//        send()
+    }
+
+
+    private fun send(){
+        val intent = Intent(this, AlarmManagerReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(this , 0, intent, 0)
+        val alarm = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        alarm.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, System.currentTimeMillis(), 15* 1000L, pendingIntent)
+    }
+
+}
+
+class AlarmManagerReceiver: BroadcastReceiver(){
+    override fun onReceive(context: Context?, intent: Intent?) {
+        Toast.makeText(context, "repeating alarm", Toast.LENGTH_SHORT).show();
     }
 
 }

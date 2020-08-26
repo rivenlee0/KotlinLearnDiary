@@ -48,6 +48,8 @@
             android:name=".project.activity.TableActivity"
             android:screenOrientation="portrait" />
 
+        <receiver android:name=".project.activity.AlarmManagerReceiver"/>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

@@ -1,1 +1,3 @@
+include ':route_compiler'
+include ':route_annotation'
 include ':app'

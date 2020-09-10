@@ -28,6 +28,7 @@ import javax.inject.Inject
 class TableActivity : AppCompatActivity() {
 
     private var tv : TextView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_table)

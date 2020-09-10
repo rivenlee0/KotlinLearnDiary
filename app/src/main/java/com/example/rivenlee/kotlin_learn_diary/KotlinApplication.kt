@@ -9,9 +9,8 @@ import androidx.multidex.MultiDex
 import dagger.hilt.android.HiltAndroidApp
 import kotlin.properties.Delegates
 
-
 @HiltAndroidApp
-class KotlinApplication : Application() {
+class KotlinApplication : Application(){
 
     companion object {
         val TAG = "KotlinLearnDiary"
@@ -19,6 +18,7 @@ class KotlinApplication : Application() {
         var context: Context by Delegates.notNull()
             private set
     }
+
     override fun onCreate() {
         super.onCreate()
         instance = this
@@ -57,4 +57,5 @@ class KotlinApplication : Application() {
         super.attachBaseContext(base)
         MultiDex.install(base)
     }
+
 }

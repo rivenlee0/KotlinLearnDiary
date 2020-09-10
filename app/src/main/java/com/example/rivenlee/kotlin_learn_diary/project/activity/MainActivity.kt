@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import com.example.rivenlee.kotlin_learn_diary.R
 import com.example.rivenlee.kotlin_learn_diary.project.fragment.HomeFragment
+import com.example.rivenlee.kotlin_learn_diary.project.lifecycle.AppLifecycleObserver
+import com.example.rivenlee.kotlin_learn_diary.project.lifecycle.AppLifecycleOwner
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +25,9 @@ class MainActivity : AppCompatActivity() {
 
     private var homeFragment : HomeFragment? = null
 
+    private val appLifecycle: AppLifecycleOwner by lazy { AppLifecycleOwner() }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         if (savedInstanceState != null) {
             mIndex = savedInstanceState.getInt(BOTTOM_INDEX)
@@ -34,6 +39,8 @@ class MainActivity : AppCompatActivity() {
             setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         }
         showFragment(mIndex)
+        appLifecycle.init(this.application)
+        appLifecycle.lifecycle.addObserver(AppLifecycleObserver(this))
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

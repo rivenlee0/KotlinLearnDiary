@@ -270,7 +270,7 @@ static class ObserverWithState {
 ```
 class AppLifecycleOwner implements LifecycleOwner{
   LifecycleRegistry registry = new LifecycleRegistry(this)
-  @ovrride
+  @override
   Lifecycle getLifecycle(){
     return  registry
   }

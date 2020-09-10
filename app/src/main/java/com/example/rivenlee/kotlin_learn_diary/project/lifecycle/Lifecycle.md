@@ -4,7 +4,7 @@
 ##### 提纲
 - 什么是Lifecycle；
 - 如何使用Lifecycle观察宿主状态；
-- Fragment是如何实现Lfecycle的；
+- Fragment是如何实现Lifecycle的；
 - Activity是如何实现Lifecycle的；
 - Lifecycle是如何分发宿主状态。
 

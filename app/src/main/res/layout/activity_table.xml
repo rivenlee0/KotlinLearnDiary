@@ -26,11 +26,20 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:id="@+id/btn_observer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:text="observer"
         android:onClick="observerClick"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_observer"
+        android:text="liveData"
+        android:onClick="liveDataClick"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

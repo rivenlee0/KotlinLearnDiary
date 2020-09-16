@@ -9,9 +9,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.rivenlee.kotlin_learn_diary.R
 import com.example.rivenlee.kotlin_learn_diary.design_mode.observer.TextChangedListener
 import com.example.rivenlee.kotlin_learn_diary.design_mode.observer.TextView
+import com.example.rivenlee.kotlin_learn_diary.project.viewmodel.TableViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -28,10 +31,14 @@ import javax.inject.Inject
 class TableActivity : AppCompatActivity() {
 
     private var tv : TextView? = null
+    private val viewModel: TableViewModel by lazy {
+        ViewModelProvider(this).get(TableViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_table)
+        setupViewModel()
         tv = TextView().apply {
             listener = object : TextChangedListener {
                 override fun onTextChanged(newText: String) {
@@ -42,11 +49,20 @@ class TableActivity : AppCompatActivity() {
 
     }
 
+    private fun setupViewModel(){
+        viewModel.liveData.observe(this, Observer {
+            Toast.makeText(this, it,Toast.LENGTH_SHORT).show()
+        })
+    }
+
     public fun observerClick(v: View){
         tv?.text = "observerClick"
 //        send()
     }
 
+    public fun liveDataClick(v: View){
+        viewModel.viewModelFunction()
+    }
 
     private fun send(){
         val intent = Intent(this, AlarmManagerReceiver::class.java)

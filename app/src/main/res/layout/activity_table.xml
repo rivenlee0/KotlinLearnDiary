@@ -35,11 +35,20 @@
         android:onClick="observerClick"/>
 
     <Button
+        android:id="@+id/btn_live_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_observer"
         android:text="liveData"
         android:onClick="liveDataClick"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_live_data"
+        android:text="ENUM"
+        android:onClick="enumClick"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

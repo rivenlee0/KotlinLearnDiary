@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.rivenlee.kotlin_learn_diary.KotlinApplication
 import com.example.rivenlee.kotlin_learn_diary.R
 import com.example.rivenlee.kotlin_learn_diary.design_mode.observer.TextChangedListener
 import com.example.rivenlee.kotlin_learn_diary.design_mode.observer.TextView
@@ -20,6 +21,7 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.components.ActivityComponent
+import java.lang.Exception
 import javax.inject.Inject
 
 /**
@@ -63,6 +65,9 @@ class TableActivity : AppCompatActivity() {
     public fun liveDataClick(v: View){
         viewModel.viewModelFunction()
     }
+    public fun enumClick(v: View){
+        LOLNIUBI().main()
+    }
 
     private fun send(){
         val intent = Intent(this, AlarmManagerReceiver::class.java)
@@ -97,4 +102,40 @@ abstract class AnalyticsModule{
     @Binds
     abstract fun bindAnalyticsService(analyticsServiceImpl: AnalyticsServiceImpl): AnalyticsService
 
+}
+enum class LOL{
+    AD, ADC, APC, JUNGLE, SUPPORT
+}
+
+class LOLNIUBI{
+
+    private lateinit var bundle: Bundle
+
+    fun main(){
+        setLOL(LOL.APC)
+        when (getLOL()) {
+            LOL.APC -> {
+                Toast.makeText(KotlinApplication.context, "APC才能拯救世界", Toast.LENGTH_SHORT).show()
+            }
+            LOL.AD -> {
+                Toast.makeText(KotlinApplication.context, "上单才能拯救世界", Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+                Toast.makeText(KotlinApplication.context, "别的位置都是垃圾", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun setLOL(lol: LOL){
+        bundle = Bundle().apply {
+            putString("我玩哪个位置", lol.name)
+        }
+    }
+
+    private fun getLOL(): LOL{
+        bundle.getString("我玩哪个位置")?.let {
+            return LOL.valueOf(it)
+        }
+        throw Exception("先说你玩啥位置")
+    }
 }

@@ -1,6 +1,6 @@
 ### KotlinLearnDiary
 ##### Kotlin
-##### Jetpack
+##### JetPack
 ##### Hilt
 ##### DesignMode
 ##### ...

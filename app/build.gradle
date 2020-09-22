@@ -55,6 +55,9 @@ allOpen {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //独立反射包 2.5M
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
     implementation 'androidx.core:core-ktx:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.lifecycle:lifecycle-common:2.2.0'

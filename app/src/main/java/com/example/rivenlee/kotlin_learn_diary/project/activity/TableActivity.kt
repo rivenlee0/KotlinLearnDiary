@@ -48,7 +48,6 @@ class TableActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     private fun setupViewModel(){

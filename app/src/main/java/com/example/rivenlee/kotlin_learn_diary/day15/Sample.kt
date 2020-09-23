@@ -1,5 +1,11 @@
 package com.example.rivenlee.kotlin_learn_diary.day15
 
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import java.io.File
 
 /**

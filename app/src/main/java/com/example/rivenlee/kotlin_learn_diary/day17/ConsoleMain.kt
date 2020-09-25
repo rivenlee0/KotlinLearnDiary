@@ -1,11 +1,6 @@
 package com.example.rivenlee.kotlin_learn_diary.day17
 
-import android.util.Log
-import kotlinx.coroutines.CoroutineStart
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import java.util.logging.Logger
+import kotlinx.coroutines.*
 
 /**
  * author: rivenlee
@@ -40,6 +35,11 @@ private suspend fun coroutineStart(){
     }
 
 
+    val mainScope = MainScope()
+
+    mainScope.launch{
+
+    }
 }
 
 

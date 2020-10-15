@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.rivenlee.kotlin_learn_diary.R
+import com.example.rivenlee.kotlin_learn_diary.project.activity.CustomActivity
 import com.example.rivenlee.kotlin_learn_diary.project.activity.TableActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -23,15 +24,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tv_table.setOnClickListener(this)
+        tv_custom.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.tv_table -> {
-                startActivity(Intent(context, TableActivity::class.java))
-            }
-            else -> {
-            }
+            R.id.tv_table -> startActivity(Intent(context, TableActivity::class.java))
+            R.id.tv_custom -> startActivity(Intent(context, CustomActivity::class.java))
         }
     }
 }

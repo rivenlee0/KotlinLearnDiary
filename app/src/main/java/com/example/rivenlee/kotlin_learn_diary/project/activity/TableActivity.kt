@@ -58,15 +58,15 @@ class TableActivity : AppCompatActivity() {
         })
     }
 
-    public fun observerClick(v: View){
+    fun observerClick(v: View){
         tv?.text = "observerClick"
 //        send()
     }
 
-    public fun liveDataClick(v: View){
+    fun liveDataClick(v: View){
         viewModel.viewModelFunction()
     }
-    public fun enumClick(v: View){
+    fun enumClick(v: View){
         LOLNIUBI().main()
     }
 

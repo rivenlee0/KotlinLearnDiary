@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
         showFragment(mIndex)
         appLifecycle.init(this.application)
-        appLifecycle.lifecycle.addObserver(AppLifecycleObserver(this))
+        appLifecycle.lifecycle.addObserver(AppLifecycleObserver())
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

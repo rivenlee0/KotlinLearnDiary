@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.rivenlee.kotlin_learn_diary.APPContext
 import com.example.rivenlee.kotlin_learn_diary.KotlinApplication
 import com.example.rivenlee.kotlin_learn_diary.R
 import com.example.rivenlee.kotlin_learn_diary.design_mode.observer.TextChangedListener
@@ -23,6 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.components.ActivityComponent
 import java.lang.Exception
 import javax.inject.Inject
+import kotlin.concurrent.thread
 
 /**
  * FileName: TableActivity
@@ -114,15 +116,16 @@ class LOLNIUBI{
         setLOL(LOL.APC)
         when (getLOL()) {
             LOL.APC -> {
-                Toast.makeText(KotlinApplication.context, "APC才能拯救世界", Toast.LENGTH_SHORT).show()
+                Toast.makeText(APPContext, "APC才能拯救世界", Toast.LENGTH_SHORT).show()
             }
             LOL.AD -> {
-                Toast.makeText(KotlinApplication.context, "上单才能拯救世界", Toast.LENGTH_SHORT).show()
+                Toast.makeText(APPContext, "上单才能拯救世界", Toast.LENGTH_SHORT).show()
             }
             else -> {
-                Toast.makeText(KotlinApplication.context, "别的位置都是垃圾", Toast.LENGTH_SHORT).show()
+                Toast.makeText(APPContext, "别的位置都是垃圾", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
     private fun setLOL(lol: LOL){
@@ -137,4 +140,5 @@ class LOLNIUBI{
         }
         throw Exception("先说你玩啥位置")
     }
+
 }

@@ -43,6 +43,14 @@
             android:name=".project.activity.CustomActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".project.activity.ScratchCardActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".project.activity.WebActivity"
+            android:screenOrientation="portrait" />
+
         <receiver android:name=".project.activity.AlarmManagerReceiver" />
 
         <provider

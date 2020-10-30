@@ -27,6 +27,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         tv_scratch.setOnClickListener(this)
         tv_web.setOnClickListener(this)
         tv_canvas.setOnClickListener(this)
+        tv_signature.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -36,6 +37,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
             R.id.tv_scratch -> startActivity(Intent(context, ScratchCardActivity::class.java))
             R.id.tv_web -> startActivity(Intent(context, WebActivity::class.java))
             R.id.tv_canvas -> startActivity(Intent(context, CanvasActivity::class.java))
+            R.id.tv_signature -> startActivity(Intent(context, SignatureActivity::class.java))
         }
     }
 }

@@ -48,6 +48,9 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".project.activity.CanvasActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".project.activity.WebActivity"
             android:screenOrientation="portrait" />
 

@@ -49,4 +49,15 @@
         android:textColor="@color/Black"
         android:text="WEB"/>
 
+    <TextView
+        android:id="@+id/tv_canvas"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:background="@color/Grey"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/Black"
+        android:text="CANVAS"/>
+
 </LinearLayout>

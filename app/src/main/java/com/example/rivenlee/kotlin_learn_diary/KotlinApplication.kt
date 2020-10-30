@@ -2,11 +2,9 @@ package com.example.rivenlee.kotlin_learn_diary
 
 import android.app.Activity
 import android.app.Application
-import android.content.Context
 import android.content.ContextWrapper
 import android.os.Bundle
 import android.util.Log
-import androidx.multidex.MultiDex
 import dagger.hilt.android.HiltAndroidApp
 
 private lateinit var INSTANCE: Application
@@ -47,12 +45,6 @@ class KotlinApplication : Application(){
             Log.d(TAG, "onCreated -> " + activity?.componentName?.className)
         }
     }
-
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        MultiDex.install(base)
-    }
-
 }
 
 object APPContext: ContextWrapper(INSTANCE)

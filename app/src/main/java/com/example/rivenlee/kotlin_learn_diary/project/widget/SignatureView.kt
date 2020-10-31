@@ -2,9 +2,19 @@ package com.example.rivenlee.kotlin_learn_diary.project.widget
 
 import android.content.Context
 import android.graphics.*
+import android.os.Environment
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewConfiguration
+import com.example.rivenlee.kotlin_learn_diary.APPContext
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.math.abs
 
 /**
@@ -62,11 +72,11 @@ class SignatureView(context: Context?, attrs: AttributeSet?) : View(context, att
                 path.moveTo(lastX, lastY)
             }
             MotionEvent.ACTION_MOVE -> {
-                if (abs(x - lastX) >= 3 || abs(y - lastY) >= 3){
+                if (abs(x - lastX) >= 3 || abs(y - lastY) >= 3) {
                     //设置贝塞尔曲线的操作点为起点和终点的一半
                     //二次贝塞尔，实现平滑曲线；lastX, lastY，endX, endY
-                    val endX = (lastX + x) /2
-                    val endY = (lastY + y) /2
+                    val endX = (lastX + x) / 2
+                    val endY = (lastY + y) / 2
                     path.quadTo(lastX, lastY, endX, endY)
                 }
                 lastX = x
@@ -94,5 +104,43 @@ class SignatureView(context: Context?, attrs: AttributeSet?) : View(context, att
             MeasureSpec.AT_MOST -> 400.coerceAtMost(specSize)
             else -> 400
         }
+    }
+
+    fun save(): Boolean {
+        val fileDir = File(APPContext.cacheDir.absolutePath + File.separator + "images" + File.separator)
+        if (!fileDir.exists()) {
+            fileDir.mkdir()
+        }
+        val filePath = getFilePath(fileDir)
+        return saveBitmap(filePath)
+    }
+
+    private fun saveBitmap(filePath: String): Boolean {
+        if (bitmap != null && lastX != 0f) {
+            isDrawingCacheEnabled = true
+            buildDrawingCache(true)
+            val bitmap = getDrawingCache(true)
+            val fileOutputStream = FileOutputStream(File(filePath))
+            try {
+                if (bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream)) {
+                    fileOutputStream.flush()
+                    fileOutputStream.close()
+                    return true
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+                fileOutputStream.close()
+            }
+            return false
+        }
+        return false
+    }
+
+    private fun getFilePath(fileDir: File): String {
+        val simpleDateFormat: SimpleDateFormat = DateFormat.getDateTimeInstance() as SimpleDateFormat
+        val fileName: String = simpleDateFormat.format(Date()).toString() + ".png"
+        val file = File(fileDir, fileName)
+        Log.d("fileName", file.absolutePath)
+        return file.absolutePath
     }
 }

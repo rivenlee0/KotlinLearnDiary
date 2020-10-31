@@ -3,10 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".project.activity.SignatureActivity">
+    tools:context=".project.activity.SignatureActivity"
+    android:orientation="vertical">
 
     <com.example.rivenlee.kotlin_learn_diary.project.widget.SignatureView
+        android:id="@+id/sign_view"
         android:layout_width="match_parent"
         android:layout_height="500dp"/>
+
+    <TextView
+        android:id="@+id/tv_save"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="保存"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/Black"
+        android:background="@color/Amber"/>
 
 </LinearLayout>

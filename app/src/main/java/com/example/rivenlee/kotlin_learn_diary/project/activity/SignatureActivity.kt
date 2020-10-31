@@ -18,5 +18,4 @@ class SignatureActivity : AppCompatActivity(R.layout.activity_signature) {
             }
         }
     }
-
 }

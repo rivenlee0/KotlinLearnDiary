@@ -38,9 +38,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".project.activity.SignatureActivity"
+        <activity
+            android:name=".project.activity.ScrollerActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".project.activity.VelocityTrackerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".project.activity.SignatureActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".project.activity.TableActivity"
             android:screenOrientation="portrait" />

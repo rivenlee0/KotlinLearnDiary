@@ -28,6 +28,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
         tv_web.setOnClickListener(this)
         tv_canvas.setOnClickListener(this)
         tv_signature.setOnClickListener(this)
+        tv_velocity_tracker.setOnClickListener(this)
+        tv_scroller.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -38,6 +40,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
             R.id.tv_web -> startActivity(Intent(context, WebActivity::class.java))
             R.id.tv_canvas -> startActivity(Intent(context, CanvasActivity::class.java))
             R.id.tv_signature -> startActivity(Intent(context, SignatureActivity::class.java))
+            R.id.tv_velocity_tracker -> startActivity(Intent(context, VelocityTrackerActivity::class.java))
+            R.id.tv_scroller -> startActivity(Intent(context, ScrollerActivity::class.java))
         }
     }
 }

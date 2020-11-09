@@ -20,7 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
         <meta-data
             android:name="design_width_in_dp"
             android:value="360" />
@@ -37,7 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".project.activity.ViewDragActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".project.activity.ScrollerActivity"
             android:screenOrientation="portrait" />

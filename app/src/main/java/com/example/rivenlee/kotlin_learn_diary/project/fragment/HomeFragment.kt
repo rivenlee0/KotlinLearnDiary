@@ -30,6 +30,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         tv_signature.setOnClickListener(this)
         tv_velocity_tracker.setOnClickListener(this)
         tv_scroller.setOnClickListener(this)
+        tv_view_drag_helper.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -42,6 +43,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
             R.id.tv_signature -> startActivity(Intent(context, SignatureActivity::class.java))
             R.id.tv_velocity_tracker -> startActivity(Intent(context, VelocityTrackerActivity::class.java))
             R.id.tv_scroller -> startActivity(Intent(context, ScrollerActivity::class.java))
+            R.id.tv_view_drag_helper -> startActivity(Intent(context, ViewDragActivity::class.java))
         }
     }
 }

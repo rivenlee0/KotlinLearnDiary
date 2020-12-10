@@ -1,6 +1,10 @@
 package com.example.rivenlee.kotlin_learn_diary.day17
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
+import kotlin.concurrent.thread
 
 /**
  * author: rivenlee
@@ -24,7 +28,6 @@ private suspend fun coroutineStart(){
     launch.start()
 
     GlobalScope.launch(start = CoroutineStart.ATOMIC) {
-
     }
     GlobalScope.launch(start = CoroutineStart.UNDISPATCHED) {
 
@@ -40,6 +43,12 @@ private suspend fun coroutineStart(){
     mainScope.launch{
 
     }
+
+    val myThread = thread (start = false){
+
+    }
+    myThread.start()
+
 }
 
 

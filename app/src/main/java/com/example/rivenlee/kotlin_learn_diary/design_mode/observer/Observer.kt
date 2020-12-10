@@ -1,5 +1,8 @@
 package com.example.rivenlee.kotlin_learn_diary.design_mode.observer
 
+import dagger.hilt.android.scopes.ActivityScoped
+import javax.inject.Inject
+import javax.inject.Singleton
 import kotlin.properties.Delegates
 
 /**
@@ -13,7 +16,9 @@ interface TextChangedListener {
     fun onTextChanged(newText: String)
 }
 
-class TextView {
+
+@Singleton
+class TextView @Inject constructor() {
     var listener: TextChangedListener? = null
     var text: String by Delegates.observable("") { prop, oldText, newText ->
         listener?.onTextChanged(newText)

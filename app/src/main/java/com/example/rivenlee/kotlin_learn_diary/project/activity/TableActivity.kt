@@ -22,6 +22,7 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.components.ActivityComponent
+import kotlinx.android.synthetic.main.activity_table.*
 import java.lang.Exception
 import javax.inject.Inject
 import kotlin.concurrent.thread
@@ -34,7 +35,9 @@ import kotlin.concurrent.thread
 @AndroidEntryPoint
 class TableActivity : AppCompatActivity() {
 
-    private var tv : TextView? = null
+    @Inject
+    lateinit var tv: TextView
+
     private val viewModel: TableViewModel by lazy {
         ViewModelProvider(this).get(TableViewModel::class.java)
     }
@@ -43,43 +46,42 @@ class TableActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_table)
         setupViewModel()
-        tv = TextView().apply {
-            listener = object : TextChangedListener {
-                override fun onTextChanged(newText: String) {
-                    Toast.makeText(this@TableActivity, newText, Toast.LENGTH_SHORT).show()
-                }
+        tv.listener = object : TextChangedListener {
+            override fun onTextChanged(newText: String) {
+                Toast.makeText(this@TableActivity, newText, Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun setupViewModel(){
+    private fun setupViewModel() {
         viewModel.liveData.observe(this, Observer {
-            Toast.makeText(this, it,Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
         })
     }
 
-    fun observerClick(v: View){
-        tv?.text = "observerClick"
+    fun observerClick(v: View) {
+        tv.text = "observerClick"
 //        send()
     }
 
-    fun liveDataClick(v: View){
+    fun liveDataClick(v: View) {
         viewModel.viewModelFunction()
     }
-    fun enumClick(v: View){
+
+    fun enumClick(v: View) {
         LOLNIUBI().main()
     }
 
-    private fun send(){
+    private fun send() {
         val intent = Intent(this, AlarmManagerReceiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(this , 0, intent, 0)
+        val pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0)
         val alarm = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        alarm.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, System.currentTimeMillis(), 15* 1000L, pendingIntent)
+        alarm.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, System.currentTimeMillis(), 15 * 1000L, pendingIntent)
     }
 
 }
 
-class AlarmManagerReceiver: BroadcastReceiver(){
+class AlarmManagerReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         Toast.makeText(context, "repeating alarm", Toast.LENGTH_SHORT).show();
     }
@@ -90,7 +92,7 @@ interface AnalyticsService {
     fun analyticsMethods()
 }
 
-class AnalyticsServiceImpl @Inject constructor(): AnalyticsService{
+class AnalyticsServiceImpl @Inject constructor() : AnalyticsService {
     override fun analyticsMethods() {
 
     }
@@ -98,21 +100,22 @@ class AnalyticsServiceImpl @Inject constructor(): AnalyticsService{
 
 @Module
 @InstallIn(ActivityComponent::class)
-abstract class AnalyticsModule{
+abstract class AnalyticsModule {
 
     @Binds
     abstract fun bindAnalyticsService(analyticsServiceImpl: AnalyticsServiceImpl): AnalyticsService
 
 }
-enum class LOL{
+
+enum class LOL {
     AD, ADC, APC, JUNGLE, SUPPORT
 }
 
-class LOLNIUBI{
+class LOLNIUBI {
 
     private lateinit var bundle: Bundle
 
-    fun main(){
+    fun main() {
         setLOL(LOL.APC)
         when (getLOL()) {
             LOL.APC -> {
@@ -128,13 +131,13 @@ class LOLNIUBI{
 
     }
 
-    private fun setLOL(lol: LOL){
+    private fun setLOL(lol: LOL) {
         bundle = Bundle().apply {
             putString("我玩哪个位置", lol.name)
         }
     }
 
-    private fun getLOL(): LOL{
+    private fun getLOL(): LOL {
         bundle.getString("我玩哪个位置")?.let {
             return LOL.valueOf(it)
         }

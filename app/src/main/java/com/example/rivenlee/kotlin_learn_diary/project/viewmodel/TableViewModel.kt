@@ -2,6 +2,7 @@ package com.example.rivenlee.kotlin_learn_diary.project.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import javax.inject.Inject
 
 /**
  * FileName: MainViewModel

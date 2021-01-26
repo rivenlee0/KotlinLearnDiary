@@ -103,5 +103,16 @@
         android:textColor="@color/Black"
         android:text="ViewDragHelper"/>
 
+    <TextView
+        android:id="@+id/tv_progress"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:background="@color/Grey"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/Black"
+        android:text="PROGRESS"/>
+
 
 </LinearLayout>

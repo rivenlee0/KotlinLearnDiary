@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="LevelProgressView">
+        <attr name="lh_borderColor" format="color|reference"/>
+        <attr name="lh_bgColor" format="color|reference" />
+        <attr name="lh_cursorColor" format="color|reference" />
+        <attr name="lh_progress" format="float" />
+    </declare-styleable>
+</resources>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".project.activity.ProgressActivity">
+    tools:context=".project.activity.ProgressActivity"
+    android:orientation="vertical">
 
     <com.example.rivenlee.kotlin_learn_diary.project.widget.LevelProgressView
         android:layout_width="300dp"
@@ -12,5 +13,12 @@
         app:lh_bgColor="@color/Grey"
         app:lh_borderColor="@color/colorPrimary"
         app:lh_progress="150"/>
+
+    <TextView
+        android:id="@+id/tv_wrapper"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="wrapper"/>
 
 </LinearLayout>

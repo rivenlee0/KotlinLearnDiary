@@ -12,7 +12,7 @@ import kotlin.reflect.KProperty
  * Date: 2020/9/27 10:57
  */
 
-class Preferences<T>(val key: String, val default: T, val prefName: String = "default"): ReadWriteProperty<Any?, T> {
+class Preferences<T>(private val key: String, private val default: T, private val prefName: String = "default"): ReadWriteProperty<Any?, T> {
 
     private val prefs by lazy {
         APPContext.getSharedPreferences(prefName, Context.MODE_PRIVATE)

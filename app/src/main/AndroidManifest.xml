@@ -59,6 +59,9 @@
         <activity
             android:name=".project.activity.WebActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".project.activity.GoodsBindListActivity"
+            android:screenOrientation="portrait" />
 
         <receiver android:name=".project.activity.AlarmManagerReceiver" />
 

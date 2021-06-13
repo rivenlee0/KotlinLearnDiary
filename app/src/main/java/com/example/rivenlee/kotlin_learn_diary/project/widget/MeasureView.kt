@@ -20,7 +20,7 @@ class MeasureView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     private val paint3 = Paint(Paint.ANTI_ALIAS_FLAG)
     private var rectF: RectF? = null
     private var bitmap = BitmapFactory.decodeResource(resources, R.mipmap.ic_launcher)
-    private var path: Path? = null
+    private var path = Path()
 
     init {
         initPaint()
@@ -45,11 +45,10 @@ class MeasureView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     }
 
     private fun initPath() {
-        path = Path()
         val floats = fivePoints(100f, 100f, 100)
         var i = 0
         while (i < floats.size - 1) {
-            path?.lineTo(floats[i], floats[0.let { i += it; i }])
+            path.lineTo(floats[i], floats[0.let { i += it; i }])
             i++
         }
     }

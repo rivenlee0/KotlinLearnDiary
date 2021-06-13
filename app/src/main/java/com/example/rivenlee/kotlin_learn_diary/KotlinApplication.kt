@@ -20,29 +20,29 @@ class KotlinApplication : Application(){
     }
 
     private var mActivityLifecycleCallbacks = object : ActivityLifecycleCallbacks{
-        override fun onActivityPaused(activity: Activity?) {
+        override fun onActivityPaused(activity: Activity) {
         }
 
-        override fun onActivityResumed(activity: Activity?) {
+        override fun onActivityResumed(activity: Activity) {
         }
 
-        override fun onActivityStarted(activity: Activity?) {
-            Log.d(TAG, "onStart -> " + activity?.componentName?.className)
+        override fun onActivityStarted(activity: Activity) {
+            Log.d(TAG, "onStart -> " + activity.componentName.className)
 
         }
 
-        override fun onActivityDestroyed(activity: Activity?) {
-            Log.d(TAG, "onDestroy -> " + activity?.componentName?.className)
+        override fun onActivityDestroyed(activity: Activity) {
+            Log.d(TAG, "onDestroy -> " + activity.componentName.className)
         }
 
-        override fun onActivitySaveInstanceState(activity: Activity?, outState: Bundle?) {
+        override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
         }
 
-        override fun onActivityStopped(activity: Activity?) {
+        override fun onActivityStopped(activity: Activity) {
         }
 
-        override fun onActivityCreated(activity: Activity?, savedInstanceState: Bundle?) {
-            Log.d(TAG, "onCreated -> " + activity?.componentName?.className)
+        override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+            Log.d(TAG, "onCreated -> " + activity.componentName.className)
         }
     }
 }

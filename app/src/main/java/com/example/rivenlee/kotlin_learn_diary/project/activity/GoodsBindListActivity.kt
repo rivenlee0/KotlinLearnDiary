@@ -3,7 +3,6 @@ package com.example.rivenlee.kotlin_learn_diary.project.activity
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.app.AppCompatActivity
-import com.example.annotation.Route
 import com.example.rivenlee.kotlin_learn_diary.R
 import com.example.rivenlee.kotlin_learn_diary.day14.add
 import com.example.rivenlee.kotlin_learn_diary.project.adapter.GoodsBindResult

@@ -20,33 +20,33 @@ class AppLifecycleOwner : LifecycleOwner{
 
     fun init(app: Application){
         app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks{
-            override fun onActivityCreated(activity: Activity?, savedInstanceState: Bundle?) {
+            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
             }
 
-            override fun onActivityStarted(activity: Activity?) {
+            override fun onActivityStarted(activity: Activity) {
                 if (count == 0) {
                     registry.handleLifecycleEvent(Lifecycle.Event.ON_START)
                 }
                 count++
             }
 
-            override fun onActivityResumed(activity: Activity?) {
+            override fun onActivityResumed(activity: Activity) {
             }
 
-            override fun onActivityPaused(activity: Activity?) {
+            override fun onActivityPaused(activity: Activity) {
             }
 
-            override fun onActivityStopped(activity: Activity?) {
+            override fun onActivityStopped(activity: Activity) {
                 count--
                 if (count == 0) {
                     registry.handleLifecycleEvent(Lifecycle.Event.ON_STOP)
                 }
             }
 
-            override fun onActivitySaveInstanceState(activity: Activity?, outState: Bundle?) {
+            override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
             }
 
-            override fun onActivityDestroyed(activity: Activity?) {
+            override fun onActivityDestroyed(activity: Activity) {
             }
         })
     }

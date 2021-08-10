@@ -33,6 +33,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         tv_view_drag_helper.setOnClickListener(this)
         tv_progress.setOnClickListener(this)
         tv_goods_search.setOnClickListener(this)
+        tv_motion.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -48,7 +49,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
             R.id.tv_view_drag_helper -> startActivity(Intent(context, ViewDragActivity::class.java))
             R.id.tv_progress -> startActivity(Intent(context, ProgressActivity::class.java))
             R.id.tv_goods_search -> startActivity(Intent(context, GoodsBindListActivity::class.java))
-
+            R.id.tv_motion -> startActivity(Intent(context, MotionActivity::class.java))
         }
     }
 }

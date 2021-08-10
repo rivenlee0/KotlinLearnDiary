@@ -63,6 +63,10 @@
             android:name=".project.activity.GoodsBindListActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".project.activity.MotionActivity"
+            android:screenOrientation="fullSensor" />
+
         <receiver android:name=".project.activity.AlarmManagerReceiver" />
 
         <provider

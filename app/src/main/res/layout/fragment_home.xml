@@ -1,129 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/White"
-    android:orientation="vertical">
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White"
+        android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/tv_table"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="表格"/>
+        <TextView
+            android:id="@+id/tv_table"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="表格"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_custom"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="CUSTOM"/>
+        <TextView
+            android:id="@+id/tv_custom"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="CUSTOM"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_scratch"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="SCRATCH"/>
+        <TextView
+            android:id="@+id/tv_scratch"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="SCRATCH"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_web"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="WEB"/>
+        <TextView
+            android:id="@+id/tv_web"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="WEB"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_canvas"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="CANVAS"/>
+        <TextView
+            android:id="@+id/tv_canvas"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="CANVAS"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_signature"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="SIGNATURE"/>
+        <TextView
+            android:id="@+id/tv_signature"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="SIGNATURE"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_velocity_tracker"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="VelocityTracker"/>
+        <TextView
+            android:id="@+id/tv_velocity_tracker"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="VelocityTracker"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_scroller"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="SCROLLER"/>
-    <TextView
-        android:id="@+id/tv_view_drag_helper"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="ViewDragHelper"/>
+        <TextView
+            android:id="@+id/tv_scroller"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="SCROLLER"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_progress"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="PROGRESS"/>
+        <TextView
+            android:id="@+id/tv_view_drag_helper"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="ViewDragHelper"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
-    <TextView
-        android:id="@+id/tv_goods_search"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:background="@color/Grey"
-        android:textSize="@dimen/sp_16"
-        android:textColor="@color/Black"
-        android:text="GOODS"/>
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="PROGRESS"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_goods_search"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="GOODS"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_motion"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:gravity="center"
+            android:text="MOTION"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/sp_16" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

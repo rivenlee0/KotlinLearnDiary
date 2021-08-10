@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <!--    动画过渡-->
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"
+        motion:motionInterpolator="linear">
+        <!--
+        toggle：来回切换
+        jumpToStart：瞬间跳转到start状态，没有动画
+        jumpToEnd：瞬间跳转到end状态，没有动画
+        transitionToStart：动画过渡到start状态
+        transitionToEnd：动画过渡到end状态
+        -->
+        <OnClick motion:targetId="@id/img_mario_run"
+            motion:clickAction="toggle" />
+
+    <!--        关键帧的数组，设置的是动画中的某个关键帧的值-->
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <!--    约束数组， 里面是一系列的View的约束值。代表的是动画的一个状态-->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/img_mario_run"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            motion:pathMotionArc="startVertical"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/img_mario_run"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:rotationX="0"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+</MotionScene>

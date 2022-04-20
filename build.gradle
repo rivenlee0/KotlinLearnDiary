@@ -4,10 +4,14 @@ buildscript {
     ext.kotlin_version = '1.4.20'
     ext.hilt_version = '2.28-alpha'
     repositories {
+        google()
         maven {
             url "http://maven.aliyun.com/nexus/content/groups/public"
         }
-        google()
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.0'
@@ -21,10 +25,13 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         maven {
             url "http://maven.aliyun.com/nexus/content/groups/public"
         }
-        google()
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
     }
 }
 

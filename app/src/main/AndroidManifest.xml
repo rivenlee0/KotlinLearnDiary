@@ -67,6 +67,10 @@
             android:name=".project.activity.MotionActivity"
             android:screenOrientation="fullSensor" />
 
+        <activity
+            android:name=".project.activity.SeekActivity"
+            android:screenOrientation="portrait" />
+
         <receiver android:name=".project.activity.AlarmManagerReceiver" />
 
         <provider

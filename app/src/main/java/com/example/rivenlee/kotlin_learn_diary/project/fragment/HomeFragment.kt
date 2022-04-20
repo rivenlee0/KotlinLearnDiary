@@ -34,22 +34,30 @@ class HomeFragment : Fragment(), View.OnClickListener {
         tv_progress.setOnClickListener(this)
         tv_goods_search.setOnClickListener(this)
         tv_motion.setOnClickListener(this)
+        tv_seek.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.tv_table -> startActivity(Intent(context, TableActivity::class.java))
-            R.id.tv_custom -> startActivity(Intent(context, CustomActivity::class.java))
-            R.id.tv_scratch -> startActivity(Intent(context, ScratchCardActivity::class.java))
-            R.id.tv_web -> startActivity(Intent(context, WebActivity::class.java))
-            R.id.tv_canvas -> startActivity(Intent(context, CanvasActivity::class.java))
-            R.id.tv_signature -> startActivity(Intent(context, SignatureActivity::class.java))
-            R.id.tv_velocity_tracker -> startActivity(Intent(context, VelocityTrackerActivity::class.java))
-            R.id.tv_scroller -> startActivity(Intent(context, ScrollerActivity::class.java))
-            R.id.tv_view_drag_helper -> startActivity(Intent(context, ViewDragActivity::class.java))
-            R.id.tv_progress -> startActivity(Intent(context, ProgressActivity::class.java))
-            R.id.tv_goods_search -> startActivity(Intent(context, GoodsBindListActivity::class.java))
-            R.id.tv_motion -> startActivity(Intent(context, MotionActivity::class.java))
+            R.id.tv_table -> startAct(TableActivity::class.java)
+            R.id.tv_custom -> startAct(CustomActivity::class.java)
+            R.id.tv_scratch -> startAct(ScratchCardActivity::class.java)
+            R.id.tv_web -> startAct(WebActivity::class.java)
+            R.id.tv_canvas -> startAct(CanvasActivity::class.java)
+            R.id.tv_signature -> startAct(SignatureActivity::class.java)
+            R.id.tv_velocity_tracker -> startAct(VelocityTrackerActivity::class.java)
+            R.id.tv_scroller -> startAct(ScrollerActivity::class.java)
+            R.id.tv_view_drag_helper -> startAct(ViewDragActivity::class.java)
+            R.id.tv_progress -> startAct(ProgressActivity::class.java)
+            R.id.tv_goods_search -> startAct(GoodsBindListActivity::class.java)
+            R.id.tv_motion -> startAct(MotionActivity::class.java)
+            R.id.tv_seek -> startAct(SeekActivity::class.java)
+        }
+    }
+
+    private inline fun <reified T> startAct(clz: Class<T>) {
+        context?.let {
+            startActivity(Intent(it, clz))
         }
     }
 }

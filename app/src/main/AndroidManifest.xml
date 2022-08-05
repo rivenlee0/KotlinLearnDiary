@@ -71,6 +71,16 @@
             android:name=".project.activity.SeekActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".project.activity.FoldActivity"
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout"/>
+
+        <activity
+            android:name=".project.activity.SBPaoWang"
+            android:screenOrientation="portrait" />
+
         <receiver android:name=".project.activity.AlarmManagerReceiver" />
 
         <provider

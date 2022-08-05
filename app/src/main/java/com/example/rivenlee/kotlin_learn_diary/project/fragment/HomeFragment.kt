@@ -31,6 +31,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener {
         tv_goods_search.setOnClickListener(this)
         tv_motion.setOnClickListener(this)
         tv_seek.setOnClickListener(this)
+        tv_fold.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -48,6 +49,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener {
             R.id.tv_goods_search -> startAct(GoodsBindListActivity::class.java)
             R.id.tv_motion -> startAct(MotionActivity::class.java)
             R.id.tv_seek -> startAct(SeekActivity::class.java)
+            R.id.tv_fold -> startAct(FoldActivity::class.java)
         }
     }
 

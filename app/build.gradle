@@ -11,9 +11,10 @@ android {
     buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId "com.example.rivenlee.kotlin_learn_diary"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
+
         versionName "1.0"
         multiDexEnabled true
     }
@@ -82,5 +83,8 @@ dependencies {
     //recycler adapter
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
+    implementation 'androidx.window:window:1.0.0-alpha09'
+
 
 }
+67

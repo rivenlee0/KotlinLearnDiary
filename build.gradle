@@ -6,12 +6,10 @@ buildscript {
     repositories {
         maven {
             //maven不信任除gradle中央仓库以外的链接， 添加allowInsecureProtocol = true，或链接改未https链接即可
-            allowInsecureProtocol = true
             url "https://maven.aliyun.com/nexus/content/groups/public"
         }
         maven {
             //maven不信任除gradle中央仓库以外的链接， 添加allowInsecureProtocol = true，或链接改未https链接即可
-            allowInsecureProtocol = true
             url 'https://maven.aliyun.com/repository/google'
         }
 
